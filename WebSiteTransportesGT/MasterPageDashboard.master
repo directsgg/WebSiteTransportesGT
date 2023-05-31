@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageDashboard.master.cs" Inherits="MasterPageDashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportes GT</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/vendors/toastify/toastify.css">
+    <script src="assets/vendors/toastify/toastify.js"></script>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/appex.css">
+    <link rel="shortcut icon" href="assets/imagneses/transporte.png" type="image/x-icon">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="app">
+            <div id="sidebar" class="active">
+                <div class="sidebar-wrapper active">
+                    <div class="sidebar-header">
+                        <div class="d-flex justify-content-between">
+                            <div class="logo">
+                                <a href="#">Transportes GT
+                                    <!--img src="assets/images/logo/logo.png" alt="Logo"-->
+                                </a>
+                            </div>
+                            <div class="toggler">
+                                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul class="menu">
+                            <li class="sidebar-title">Menu</li>
+
+                            <li class="sidebar-item  ">
+                                <a href="ingreso_conductor.aspx" class='sidebar-link'>
+                                    <i class="bi bi-person-lines-fill"></i>
+                                    <span>Conductor</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item  ">
+                                <a href="ingreso_camion.aspx" class='sidebar-link'>
+                                    <i class="bi bi-truck"></i>
+                                    <span>Camión</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item  ">
+                                <a href="ingreso_destinatario.aspx" class='sidebar-link'>
+                                    <i class="bi bi-person"></i>
+                                    <span>Destinatario</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item  ">
+                                <a href="historial_conduccion.aspx" class='sidebar-link'>
+                                    <i class="bi bi-clipboard"></i>
+                                    <span>Historial conduccion</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item  ">
+                                <a href="ingreso_paquete.aspx" class='sidebar-link'>
+                                    <i class="bi bi-box"></i>
+                                    <span>Paquete</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+                </div>
+            </div>
+
+            <div id="main" class='layout-navbar'>
+                <header class='mb-3'>
+                    <nav class="navbar navbar-expand navbar-light ">
+                        <div class="container-fluid">
+                            <a href="#" class="burger-btn d-block">
+                                <i class="bi bi-justify fs-3"></i>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item dropdown me-1">
+                                        <a class="nav-link active" href="#">
+                                            <div class="user-name text-end me-3">
+                                                <p class="mb-0 text-sm text-gray-600">¡Hola!</p>
+                                                <asp:Label ID="LabelUsuario" CssClass="mb-0 h6 text-gray-600" Text="Usuario fdsafdg" runat="server" />
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a class="btn btn-link text-decoration-none" href="default.aspx">
+                                    <i class="icon-mid bi bi-box-arrow-left me-2"></i>Cerrar sesion
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+                <div id="main-content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
